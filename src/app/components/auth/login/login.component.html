@@ -1,5 +1,26 @@
-<h1>Login</h1>
-<mat-form-field appearance="fill">
-  <mat-label>Outline form field</mat-label>
-  <input matInput placeholder="Placeholder" />
-</mat-form-field>
+<h1>Anmelden</h1>
+<span class="poweredBy"
+  >powered by
+  <img src="assets/images/Firebase_Logo_Standard_Lockup.svg" alt="firebase logo"
+/></span>
+<form (submit)="submitForm()">
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" autocomplete="email" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Passwort</mat-label>
+    <input matInput type="password" autocomplete="current-password" />
+  </mat-form-field>
+  <button type="submit" color="primary" mat-stroked-button>Anmelden</button>
+</form>
+<div class="divider">
+  <span></span>
+  oder
+  <span></span>
+</div>
+<button class="register" color="primary" mat-stroked-button>
+  Registrieren
+</button>
+<span class="flex-grow"></span>
+<button mat-button>Passwort vergessen?</button>
