@@ -1,0 +1,47 @@
+<h1>Stundenplan</h1>
+
+<div class="weekdayWrapper">
+  <div #dayIndicator class="indicator"></div>
+  <div
+    (click)="onBoxClick($event, 0)"
+    [class.active]="selectedDay == 0"
+    class="dayBox"
+  >
+    Mo
+  </div>
+  <div
+    (click)="onBoxClick($event, 1)"
+    [class.active]="selectedDay == 1"
+    class="dayBox"
+  >
+    Di
+  </div>
+  <div
+    (click)="onBoxClick($event, 2)"
+    [class.active]="selectedDay == 2"
+    class="dayBox"
+  >
+    Mi
+  </div>
+  <div
+    (click)="onBoxClick($event, 3)"
+    [class.active]="selectedDay == 3"
+    class="dayBox"
+  >
+    Do
+  </div>
+  <div
+    (click)="onBoxClick($event, 4)"
+    [class.active]="selectedDay == 4"
+    class="dayBox"
+  >
+    Fr
+  </div>
+</div>
+
+<div class="scheduleWrapper">
+  <div class="subjectWrapper" *ngFor="let subject of schedule[selectedDay]">
+    <span class="title">{{ subject.title }}</span>
+    <span class="room">{{ subject.room }}</span>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+@import 'vars';
+
+:host {
+  display: block;
+  padding: 2rem;
+
+  h1 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin: 0 0 2rem;
+  }
+
+  .weekdayWrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .dayBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 60px;
+      background: rgba(0, 0, 0, 0.06);
+      font-weight: 600;
+      border-radius: 8px;
+      z-index: 1;
+      transition: color 0.2s linear;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+
+      &.active {
+        color: white;
+        transition: color 0.2s linear 0.16s;
+      }
+    }
+
+    .indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 3px solid $primary;
+      background: $primary;
+      height: 50px;
+      width: 60px;
+      border-radius: 8px;
+      box-sizing: border-box;
+      transition: left 0.4s $cb;
+    }
+  }
+
+  .scheduleWrapper {
+    margin: 16px 0;
+
+    .subjectWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      height: 64px;
+      padding: 0 16px;
+      margin: 0 0 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      border-left: 16px solid $primary;
+
+      .title {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin: 0 0 2px;
+      }
+    }
+  }
+}

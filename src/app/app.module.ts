@@ -9,9 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/auth/login/login.component';
 import { MaterialModule } from './modules/material.module';
+import { ScheduleComponent } from './components/page/schedule/schedule.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, ScheduleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
