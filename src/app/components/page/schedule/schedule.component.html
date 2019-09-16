@@ -40,7 +40,11 @@
 </div>
 
 <div class="scheduleWrapper">
-  <div class="subjectWrapper" *ngFor="let subject of schedule[selectedDay]">
+  <div
+    [@myAnimation]="true"
+    class="subjectWrapper"
+    *ngFor="let subject of schedule[selectedDay]"
+  >
     <span class="title">{{ subject.title }}</span>
     <span class="room">{{ subject.room }}</span>
   </div>

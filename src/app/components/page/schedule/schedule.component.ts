@@ -1,9 +1,29 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  trigger,
+  transition,
+  query,
+  style,
+  animate,
+  state,
+  stagger,
+} from '@angular/animations';
 
 @Component({
   selector: 'mf-schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.scss'],
+  animations: [
+    trigger('myAnimation', [
+      transition(':enter', [
+        query(':self', [
+          style({ opacity: 0 }),
+          stagger('3s', animate('0.3s', style({ opacity: 1 }))),
+        ]),
+      ]),
+      //transition(':leave', [animate('0.3s', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class ScheduleComponent implements OnInit {
   @ViewChild('dayIndicator', { static: false }) dayIndicator;
