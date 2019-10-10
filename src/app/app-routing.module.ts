@@ -7,12 +7,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: LoginComponent,
-  },
-  {
-    path: 'schedule',
     component: ScheduleComponent,
   },
+  /*{
+    path: 'schedule',
+    component: ScheduleComponent,
+  },*/
 ];
 
 @NgModule({

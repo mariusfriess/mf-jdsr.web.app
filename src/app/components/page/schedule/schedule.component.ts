@@ -5,7 +5,6 @@ import {
   query,
   style,
   animate,
-  state,
   stagger,
 } from '@angular/animations';
 
@@ -26,7 +25,9 @@ import {
   ],
 })
 export class ScheduleComponent implements OnInit {
-  @ViewChild('dayIndicator', { static: false }) dayIndicator;
+  @ViewChild('dayIndicator', { static: true }) dayIndicator: ElementRef<
+    HTMLElement
+  >;
 
   selectedDay: number = 0;
 
@@ -121,7 +122,17 @@ export class ScheduleComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let date = new Date();
+    let day = date.getDay() - 1;
+    if (date.getHours() > 15) {
+      day++;
+    }
+    if (day >= 5) day = 0;
+    this.selectedDay = day;
+    this.dayIndicator.nativeElement.style.left =
+      document.querySelectorAll('.dayBox')[day]['offsetLeft'] + 'px';
+  }
 
   onBoxClick(event, index) {
     this.selectedDay = index;
